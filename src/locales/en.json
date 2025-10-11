@@ -1,0 +1,223 @@
+{
+  "common": {
+    "appName": "Sendify",
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "es": "Spanish"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "IN_TRANSIT": "In transit",
+      "DELIVERED": "Delivered",
+      "CANCELLED": "Cancelled",
+      "RETURNED": "Returned",
+      "REGISTERED": "Registered",
+      "OUT_FOR_DELIVERY": "Out for delivery"
+    },
+    "actions": {
+      "login": "Sign in",
+      "logout": "Sign out",
+      "search": "Search",
+      "assign": "Assign",
+      "confirm": "Confirm",
+      "confirmDelivery": "Confirm delivery",
+      "create": "Create",
+      "createShipment": "Create shipment",
+      "createCourier": "Create courier",
+      "newShipment": "New shipment",
+      "newCourier": "New courier",
+      "back": "Back",
+      "backToLogin": "Back to login",
+      "update": "Update",
+      "delete": "Delete",
+      "view": "View",
+      "cancel": "Cancel"
+    },
+    "labels": {
+      "username": "Username",
+      "password": "Password",
+      "trackingCode": "Tracking code",
+      "courierCode": "Courier code",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "deliveryPerson": "Courier",
+      "sender": "Sender",
+      "recipient": "Recipient",
+      "origin": "Origin",
+      "destination": "Destination",
+      "street": "Street",
+      "city": "City",
+      "state": "State / Province",
+      "zip": "Postal code",
+      "country": "Country",
+      "weight": "Weight (kg)",
+      "estimatedDelivery": "Estimated delivery",
+      "courier": "Courier",
+      "status": "Status",
+      "actions": "Actions",
+      "optional": "optional"
+    },
+    "placeholders": {
+      "username": "e.g. admin",
+      "password": "e.g. ********",
+      "trackingCode": "Enter tracking code",
+      "courierCode": "e.g. DEL001",
+      "courierName": "e.g. Ana Torres",
+      "courierPhone": "e.g. +57 3001234567"
+    },
+    "messages": {
+      "noData": "No data available",
+      "assignedShipments": "Assigned shipments",
+      "none": "None"
+    }
+  },
+  "login": {
+    "subtitle": "Administrative panel",
+    "buttons": {
+      "signIn": "Sign in",
+      "tracking": "Shipment tracking",
+      "deliveryAccess": "Courier access"
+    }
+  },
+  "tracking": {
+    "title": "Shipment tracking",
+    "statusLabel": "Current status",
+    "sender": "Sender",
+    "recipient": "Recipient",
+    "destination": "Destination",
+    "timelineTitle": "Tracking timeline",
+    "noUpdates": "No updates available yet"
+  },
+  "delivery": {
+    "login": {
+      "title": "Courier access",
+      "codeLabel": "Courier code"
+    },
+    "dashboard": {
+      "title": "Assigned deliveries",
+      "codeLabel": "Code",
+      "empty": "No shipments assigned",
+      "columns": {
+        "tracking": "Tracking",
+        "origin": "Origin",
+        "destination": "Destination",
+        "recipient": "Recipient",
+        "estimatedDelivery": "Estimated delivery",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "management": {
+      "title": "Courier management",
+      "subtitle": "Manage Sendify's delivery force",
+      "table": {
+        "name": "Name",
+        "code": "Code",
+        "phone": "Phone",
+        "assigned": "Assigned shipments",
+        "actions": "Actions"
+      },
+      "dialogTitle": "Assigned shipments",
+      "dialogEmpty": "Select a courier",
+      "dialogItem": "Shipment #{{id}}",
+      "toastDeleted": "Courier deleted"
+    },
+    "create": {
+      "title": "New courier",
+      "toastCreated": "Courier created"
+    }
+  },
+  "admin": {
+    "title": "Sendify shipments dashboard",
+    "subtitle": "Centralized management of shipments and couriers",
+    "stats": {
+      "total": "Total shipments",
+      "inTransit": "In transit",
+      "delivered": "Delivered",
+      "pending": "Pending"
+    },
+    "shipments": {
+      "title": "Shipments",
+      "searchPlaceholder": "Search by tracking code",
+      "filters": {
+        "status": "Status",
+        "courier": "Courier"
+      },
+      "table": {
+        "tracking": "Tracking",
+        "sender": "Sender",
+        "recipient": "Recipient",
+        "status": "Status",
+        "courier": "Courier",
+        "actions": "Actions"
+      },
+      "unassigned": "Unassigned",
+      "assignDialog": {
+        "title": "Assign courier",
+        "label": "Select courier",
+        "assign": "Assign"
+      },
+      "toastAssigned": "Courier assigned successfully",
+      "toastDeleted": "Shipment deleted"
+    }
+  },
+  "shipment": {
+    "create": {
+      "title": "New shipment",
+      "sections": {
+        "sender": "Sender",
+        "recipient": "Recipient",
+        "origin": "Origin",
+        "destination": "Destination",
+        "details": "Details",
+        "summary": "Summary"
+      },
+      "summary": {
+        "tracking": "Temporary tracking code",
+        "cost": "Estimated cost",
+        "deliveryPerson": "Assigned courier"
+      }
+    },
+    "detail": {
+      "timelineTitle": "Shipment timeline",
+      "cards": {
+        "sender": "Sender",
+        "recipient": "Recipient",
+        "origin": "Origin",
+        "destination": "Destination"
+      },
+      "buttons": {
+        "update": "Update status",
+        "back": "Back"
+      },
+      "statusPlaceholder": "Update status"
+    }
+  },
+  "confirm": {
+    "deleteShipment": "Delete this shipment?"
+  },
+  "toast": {
+    "assigned": "Courier assigned",
+    "deleted": "Shipment deleted",
+    "courierDeleted": "Courier removed",
+    "courierCreated": "Courier created"
+  },
+  "errors": {
+    "invalidCredentials": "Invalid credentials",
+    "loginFailed": "Unable to sign in",
+    "fetchShipments": "Unable to load shipments",
+    "fetchShipmentDetail": "Unable to load shipment detail",
+    "createShipment": "Unable to create shipment",
+    "fetchCouriers": "Unable to load couriers",
+    "fetchDeliveryPersons": "Unable to load couriers",
+    "createDeliveryPerson": "Unable to create courier",
+    "deleteDeliveryPerson": "Unable to delete courier",
+    "invalidCourierCode": "Invalid courier code",
+    "fetchAssignedShipments": "Unable to load assigned shipments",
+    "fetchTracking": "Unable to load tracking events",
+    "trackingNotFound": "Shipment not found",
+    "unknown": "Something went wrong"
+  }
+}

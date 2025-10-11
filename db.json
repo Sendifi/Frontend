@@ -1,0 +1,238 @@
+{
+  "shipments": [
+    {
+      "id": "1",
+      "trackingCode": "SFY123456789",
+      "sender": {
+        "name": "Juan Pérez",
+        "email": "juan@email.com",
+        "phone": "+1234567890"
+      },
+      "recipient": {
+        "name": "María García",
+        "email": "maria@email.com",
+        "phone": "+0987654321"
+      },
+      "originAddress": {
+        "street": "Calle 123",
+        "city": "Bogotá",
+        "state": "Cundinamarca",
+        "zipCode": "110111",
+        "country": "Colombia"
+      },
+      "destinationAddress": {
+        "street": "Avenida 456",
+        "city": "Medellín",
+        "state": "Antioquia",
+        "zipCode": "050001",
+        "country": "Colombia"
+      },
+      "weight": 2.5,
+      "cost": 15000,
+      "status": "DELIVERED",
+      "courierId": 1,
+      "deliveryPersonId": "e07a",
+      "estimatedDelivery": "2024-01-15",
+      "createdAt": "2024-01-10T10:00:00Z",
+      "updatedAt": "2025-10-10T22:22:34.489Z"
+    },
+    {
+      "id": "2",
+      "trackingCode": "SFY987654321",
+      "sender": {
+        "name": "Logística Norte",
+        "email": "operaciones@logistanorte.com",
+        "phone": "+573101112233"
+      },
+      "recipient": {
+        "name": "Laura Mejía",
+        "email": "laura.mejia@email.com",
+        "phone": "+573221112233"
+      },
+      "originAddress": {
+        "street": "Carrera 7 #45",
+        "city": "Bogotá",
+        "state": "Cundinamarca",
+        "zipCode": "110231",
+        "country": "Colombia"
+      },
+      "destinationAddress": {
+        "street": "Calle 10 #21",
+        "city": "Cali",
+        "state": "Valle del Cauca",
+        "zipCode": "760001",
+        "country": "Colombia"
+      },
+      "weight": 5.2,
+      "cost": 32000,
+      "status": "DELIVERED",
+      "courierId": 1,
+      "deliveryPersonId": "1",
+      "estimatedDelivery": "2024-01-20",
+      "createdAt": "2024-01-11T09:00:00Z",
+      "updatedAt": "2025-10-10T22:21:42.423Z"
+    },
+    {
+      "id": "3",
+      "trackingCode": "SFY654789321",
+      "sender": {
+        "name": "Distribuciones Andes",
+        "email": "ventas@andes.com",
+        "phone": "+573044556677"
+      },
+      "recipient": {
+        "name": "Pedro Castillo",
+        "email": "pedro.castillo@email.com",
+        "phone": "+573133445566"
+      },
+      "originAddress": {
+        "street": "Av. Libertador 500",
+        "city": "Lima",
+        "state": "Lima",
+        "zipCode": "15001",
+        "country": "Perú"
+      },
+      "destinationAddress": {
+        "street": "Av. Central 100",
+        "city": "Quito",
+        "state": "Pichincha",
+        "zipCode": "170102",
+        "country": "Ecuador"
+      },
+      "weight": 1.8,
+      "cost": 28000,
+      "status": "DELIVERED",
+      "courierId": 2,
+      "deliveryPersonId": "2",
+      "estimatedDelivery": "2024-01-25",
+      "createdAt": "2024-01-15T13:20:00Z",
+      "updatedAt": "2025-10-10T22:10:59.601Z"
+    },
+    {
+      "id": "0e10",
+      "trackingCode": "SFY175351063",
+      "sender": {
+        "name": "Pietro",
+        "email": "pietro@gmail.com",
+        "phone": "987654345"
+      },
+      "recipient": {
+        "name": "Pepe",
+        "email": "pepe@gmail.com",
+        "phone": "123123123"
+      },
+      "originAddress": {
+        "street": "via lactia",
+        "city": "lima",
+        "state": "lima",
+        "zipCode": "15012",
+        "country": "peru",
+        "coordinates": null
+      },
+      "destinationAddress": {
+        "street": "economos",
+        "city": "lima",
+        "state": "lima",
+        "zipCode": "15012",
+        "country": "peru",
+        "coordinates": null
+      },
+      "weight": 20,
+      "cost": 100000,
+      "status": "DELIVERED",
+      "courierId": "1",
+      "deliveryPersonId": "e07a",
+      "estimatedDelivery": "2025-10-16",
+      "createdAt": "2025-10-10T18:53:20.867Z",
+      "updatedAt": "2025-10-10T22:22:35.062Z"
+    }
+  ],
+  "trackingEvents": [
+    {
+      "id": "1",
+      "shipmentId": 1,
+      "status": "REGISTERED",
+      "description": "Envío registrado",
+      "location": "Bogotá",
+      "timestamp": "2024-01-10T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "shipmentId": 1,
+      "status": "IN_TRANSIT",
+      "description": "Envío en tránsito hacia Medellín",
+      "location": "Bogotá",
+      "timestamp": "2024-01-12T14:30:00Z"
+    },
+    {
+      "id": "3",
+      "shipmentId": 2,
+      "status": "DELIVERED",
+      "description": "Entrega confirmada por repartidor",
+      "location": "Cali",
+      "timestamp": "2024-01-21T17:45:00Z"
+    }
+  ],
+  "couriers": [
+    {
+      "id": "1",
+      "name": "Express Courier",
+      "costPerKg": 5000,
+      "estimatedDays": 2
+    },
+    {
+      "id": "2",
+      "name": "Global Air",
+      "costPerKg": 8500,
+      "estimatedDays": 5
+    }
+  ],
+  "deliveryPersons": [
+    {
+      "id": "1",
+      "name": "Carlos López",
+      "code": "DEL001",
+      "phone": "+1111111111",
+      "assignedShipments": [
+        1,
+        "2"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ana Torres",
+      "code": "DEL002",
+      "phone": "+2222222222",
+      "assignedShipments": [
+        2,
+        "3"
+      ]
+    },
+    {
+      "id": "e07a",
+      "name": "Jose Ricardo",
+      "code": "123jo",
+      "phone": "936628022",
+      "assignedShipments": [
+        "0e10",
+        "1"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "role": "ADMIN",
+      "email": "admin@sendify.com"
+    },
+    {
+      "id": "2",
+      "username": "support",
+      "password": "support123",
+      "role": "ANALYST",
+      "email": "support@sendify.com"
+    }
+  ]
+}

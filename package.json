@@ -1,0 +1,31 @@
+{
+  "name": "proyecto-sendify",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "mock:server": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {
+    "@primevue/themes": "^4.1.2",
+    "axios": "^1.7.7",
+    "i18n": "^0.15.2",
+    "pinia": "^2.1.7",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.1.2",
+    "vue": "^3.5.22",
+    "vue-i18n": "^9.14.5",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "json-server": "^1.0.0-beta.1",
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.1.14"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "common": {
+    "appName": "Sendify",
+    "language": {
+      "label": "Idioma",
+      "en": "Inglés",
+      "es": "Español"
+    },
+    "status": {
+      "PENDING": "Pendiente",
+      "IN_TRANSIT": "En tránsito",
+      "DELIVERED": "Entregado",
+      "CANCELLED": "Cancelado",
+      "RETURNED": "Devuelto",
+      "REGISTERED": "Registrado",
+      "OUT_FOR_DELIVERY": "En ruta de entrega"
+    },
+    "actions": {
+      "login": "Ingresar",
+      "logout": "Cerrar sesión",
+      "search": "Buscar",
+      "assign": "Asignar",
+      "confirm": "Confirmar",
+      "confirmDelivery": "Confirmar entrega",
+      "create": "Crear",
+      "createShipment": "Crear envío",
+      "createCourier": "Crear repartidor",
+      "newShipment": "Nuevo envío",
+      "newCourier": "Nuevo repartidor",
+      "back": "Volver",
+      "backToLogin": "Volver al inicio",
+      "update": "Actualizar",
+      "delete": "Eliminar",
+      "view": "Ver",
+      "cancel": "Cancelar"
+    },
+    "labels": {
+      "username": "Usuario",
+      "password": "Contraseña",
+      "trackingCode": "Código de tracking",
+      "courierCode": "Código de repartidor",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "deliveryPerson": "Repartidor",
+      "sender": "Remitente",
+      "recipient": "Destinatario",
+      "origin": "Origen",
+      "destination": "Destino",
+      "street": "Calle",
+      "city": "Ciudad",
+      "state": "Estado / Provincia",
+      "zip": "Código postal",
+      "country": "País",
+      "weight": "Peso (kg)",
+      "estimatedDelivery": "Entrega estimada",
+      "courier": "Repartidor",
+      "status": "Estado",
+      "actions": "Acciones",
+      "optional": "opcional"
+    },
+    "placeholders": {
+      "username": "Ej: admin",
+      "password": "Ej: ********",
+      "trackingCode": "Ingresa el código de tracking",
+      "courierCode": "Ej: DEL001",
+      "courierName": "Ej: Ana Torres",
+      "courierPhone": "Ej: +57 3001234567"
+    },
+    "messages": {
+      "noData": "No hay información disponible",
+      "assignedShipments": "Envíos asignados",
+      "none": "Sin asignar"
+    }
+  },
+  "login": {
+    "subtitle": "Panel administrativo",
+    "buttons": {
+      "signIn": "Ingresar",
+      "tracking": "Seguimiento de envíos",
+      "deliveryAccess": "Acceso repartidor"
+    }
+  },
+  "tracking": {
+    "title": "Seguimiento de envíos",
+    "statusLabel": "Estado actual",
+    "sender": "Remitente",
+    "recipient": "Destinatario",
+    "destination": "Destino",
+    "timelineTitle": "Línea de tiempo del envío",
+    "noUpdates": "Aún no hay actualizaciones disponibles"
+  },
+  "delivery": {
+    "login": {
+      "title": "Acceso repartidor",
+      "codeLabel": "Código de repartidor"
+    },
+    "dashboard": {
+      "title": "Envíos asignados",
+      "codeLabel": "Código",
+      "empty": "No hay envíos asignados",
+      "columns": {
+        "tracking": "Tracking",
+        "origin": "Origen",
+        "destination": "Destino",
+        "recipient": "Destinatario",
+        "estimatedDelivery": "Entrega estimada",
+        "status": "Estado",
+        "actions": "Acciones"
+      }
+    },
+    "management": {
+      "title": "Gestión de repartidores",
+      "subtitle": "Administra la fuerza de entrega de Sendify",
+      "table": {
+        "name": "Nombre",
+        "code": "Código",
+        "phone": "Teléfono",
+        "assigned": "Envíos asignados",
+        "actions": "Acciones"
+      },
+      "dialogTitle": "Envíos asignados",
+      "dialogEmpty": "Selecciona un repartidor",
+      "dialogItem": "Envío #{{id}}",
+      "toastDeleted": "Repartidor eliminado"
+    },
+    "create": {
+      "title": "Nuevo repartidor",
+      "toastCreated": "Repartidor creado"
+    }
+  },
+  "admin": {
+    "title": "Panel de envíos Sendify",
+    "subtitle": "Gestión centralizada de envíos y repartidores",
+    "stats": {
+      "total": "Total de envíos",
+      "inTransit": "En tránsito",
+      "delivered": "Entregados",
+      "pending": "Pendientes"
+    },
+    "shipments": {
+      "title": "Envíos",
+      "searchPlaceholder": "Buscar por código de tracking",
+      "filters": {
+        "status": "Estado",
+        "courier": "Repartidor"
+      },
+      "table": {
+        "tracking": "Tracking",
+        "sender": "Remitente",
+        "recipient": "Destinatario",
+        "status": "Estado",
+        "courier": "Repartidor",
+        "actions": "Acciones"
+      },
+      "unassigned": "Sin asignar",
+      "assignDialog": {
+        "title": "Asignar repartidor",
+        "label": "Selecciona un repartidor",
+        "assign": "Asignar"
+      },
+      "toastAssigned": "Repartidor asignado correctamente",
+      "toastDeleted": "Envío eliminado"
+    }
+  },
+  "shipment": {
+    "create": {
+      "title": "Nuevo envío",
+      "sections": {
+        "sender": "Remitente",
+        "recipient": "Destinatario",
+        "origin": "Origen",
+        "destination": "Destino",
+        "details": "Detalles",
+        "summary": "Resumen"
+      },
+      "summary": {
+        "tracking": "Tracking provisorio",
+        "cost": "Costo estimado",
+        "deliveryPerson": "Repartidor asignado"
+      }
+    },
+    "detail": {
+      "timelineTitle": "Línea de tiempo del envío",
+      "cards": {
+        "sender": "Remitente",
+        "recipient": "Destinatario",
+        "origin": "Origen",
+        "destination": "Destino"
+      },
+      "buttons": {
+        "update": "Actualizar estado",
+        "back": "Volver"
+      },
+      "statusPlaceholder": "Actualizar estado"
+    }
+  },
+  "confirm": {
+    "deleteShipment": "¿Eliminar este envío?"
+  },
+  "toast": {
+    "assigned": "Repartidor asignado",
+    "deleted": "Envío eliminado",
+    "courierDeleted": "Repartidor eliminado",
+    "courierCreated": "Repartidor creado"
+  },
+  "errors": {
+    "invalidCredentials": "Credenciales inválidas",
+    "loginFailed": "No fue posible iniciar sesión",
+    "fetchShipments": "No fue posible cargar los envíos",
+    "fetchShipmentDetail": "No fue posible obtener el detalle del envío",
+    "createShipment": "No fue posible crear el envío",
+    "fetchCouriers": "No fue posible cargar los couriers",
+    "fetchDeliveryPersons": "No fue posible cargar los repartidores",
+    "createDeliveryPerson": "No fue posible crear el repartidor",
+    "deleteDeliveryPerson": "No fue posible eliminar el repartidor",
+    "invalidCourierCode": "Código de repartidor inválido",
+    "fetchAssignedShipments": "No fue posible cargar los envíos asignados",
+    "fetchTracking": "No fue posible cargar el tracking",
+    "trackingNotFound": "No se encontró información",
+    "unknown": "Ha ocurrido un error"
+  }
+}
