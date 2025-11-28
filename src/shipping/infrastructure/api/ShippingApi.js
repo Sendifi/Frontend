@@ -1,10 +1,15 @@
 import { httpClient } from '../../../core/api/httpClient.js'
+import { toApiShipmentStatus } from '../../../core/utils/statusMapper.js'
 
 const RESOURCE = '/shipments'
 
 export const ShippingApi = {
   async getAll(params = {}) {
-    const response = await httpClient.get(RESOURCE, { params })
+    const mappedParams = { ...params }
+    if (params.status) {
+      mappedParams.status = toApiShipmentStatus(params.status)
+    }
+    const response = await httpClient.get(RESOURCE, { params: mappedParams })
     return response.data
   },
   async getById(id) {
@@ -20,7 +25,11 @@ export const ShippingApi = {
     return response.data
   },
   async update(id, payload) {
-    const response = await httpClient.patch(`${RESOURCE}/${id}`, payload)
+    const body = { ...payload }
+    if (payload?.status) {
+      body.status = toApiShipmentStatus(payload.status)
+    }
+    const response = await httpClient.patch(`${RESOURCE}/${id}`, body)
     return response.data
   },
   async delete(id) {

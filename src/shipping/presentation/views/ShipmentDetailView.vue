@@ -100,7 +100,7 @@ const shippingStore = useShippingStore()
 const trackingStore = useTrackingStore()
 const { t } = useI18n()
 
-const shipmentId = Number(route.params.id)
+const shipmentId = route.params.id
 const shipment = computed(() => shippingStore.selectedShipment)
 const statusSelection = ref(null)
 
@@ -142,6 +142,8 @@ function getStatusSeverity(status) {
     case 'IN_TRANSIT':
       return 'info'
     case 'PENDING':
+      return 'warning'
+    case 'DELAYED':
       return 'warning'
     case 'CANCELLED':
       return 'danger'

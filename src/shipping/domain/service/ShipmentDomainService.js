@@ -3,7 +3,8 @@ import { Shipment } from '../model/Shipment.js'
 export class ShipmentDomainService {
   static calculateCost(weight, courier) {
     if (!courier?.costPerKg) return 0
-    return Number((weight || 0) * courier.costPerKg)
+    const base = courier.baseCost || 0
+    return Number(base + (weight || 0) * courier.costPerKg)
   }
 
   static create({ payload, courier }) {

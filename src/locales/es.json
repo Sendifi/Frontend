@@ -12,6 +12,7 @@
       "DELIVERED": "Entregado",
       "CANCELLED": "Cancelado",
       "RETURNED": "Devuelto",
+      "DELAYED": "Retrasado",
       "REGISTERED": "Registrado",
       "OUT_FOR_DELIVERY": "En ruta de entrega"
     },
@@ -61,6 +62,7 @@
     },
     "placeholders": {
       "username": "Ej: admin",
+      "email": "Ej: admin@sendify.com",
       "password": "Ej: ********",
       "trackingCode": "Ingresa el código de tracking",
       "courierCode": "Ej: DEL001",

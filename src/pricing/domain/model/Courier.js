@@ -1,9 +1,11 @@
 export class Courier {
-  constructor({ id, name, costPerKg, estimatedDays }) {
+  constructor({ id, name, costPerKg, estimatedDays, pricing = {}, baseCost = 0, isActive = true }) {
     this.id = id
     this.name = name
-    this.costPerKg = Number(costPerKg)
-    this.estimatedDays = Number(estimatedDays)
+    this.costPerKg = Number(costPerKg ?? pricing.perKg ?? 0)
+    this.baseCost = Number(baseCost ?? pricing.baseCost ?? 0)
+    this.estimatedDays = Number(estimatedDays ?? pricing.estimatedDays ?? 0)
+    this.isActive = isActive
   }
 
   isValid() {
@@ -19,7 +21,13 @@ export class Courier {
       id: this.id,
       name: this.name,
       costPerKg: this.costPerKg,
+      baseCost: this.baseCost,
       estimatedDays: this.estimatedDays,
+      isActive: this.isActive,
+      pricing: {
+        baseCost: this.baseCost,
+        perKg: this.costPerKg,
+      },
     }
   }
 }

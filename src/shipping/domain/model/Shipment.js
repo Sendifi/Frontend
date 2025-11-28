@@ -27,8 +27,8 @@ export class Shipment {
     this.originAddress = originAddress instanceof Address ? originAddress : Address.fromPrimitives(originAddress)
     this.destinationAddress =
       destinationAddress instanceof Address ? destinationAddress : Address.fromPrimitives(destinationAddress)
-    this.weight = Number(weight)
-    this.cost = Number(cost)
+    this.weight = weight != null ? Number(weight) : 0
+    this.cost = cost != null ? Number(cost) : 0
     this.status = status
     this.courierId = courierId
     this.deliveryPersonId = deliveryPersonId

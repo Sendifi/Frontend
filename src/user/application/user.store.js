@@ -18,16 +18,16 @@ export const useUserStore = defineStore('user', {
     role: (state) => state.currentUser?.role ?? null,
   },
   actions: {
-    async login({ username, password }) {
+    async login({ email, password }) {
       this.loading = true
       this.error = null
       try {
         const handler = new LoginUserHandler({ userRepository })
-        const user = await handler.execute(new LoginUserCommand({ username, password }))
+        const user = await handler.execute(new LoginUserCommand({ email, password }))
         this.currentUser = user
         return user
       } catch (error) {
-        this.error = error.message || 'errors.loginFailed'
+        this.error = error.message || error.error || 'errors.loginFailed'
         throw error
       } finally {
         this.loading = false

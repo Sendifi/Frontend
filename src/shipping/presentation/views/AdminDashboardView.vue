@@ -254,6 +254,10 @@ function getStatusSeverity(status) {
       return 'info'
     case 'PENDING':
       return 'warning'
+    case 'DELAYED':
+      return 'warning'
+    case 'CANCELLED':
+      return 'danger'
     default:
       return 'secondary'
   }
@@ -309,8 +313,8 @@ function removeShipment(id) {
   })
 }
 
-function logout() {
-  userStore.logout()
+async function logout() {
+  await userStore.logout()
   router.push({ name: 'login' })
 }
 </script>

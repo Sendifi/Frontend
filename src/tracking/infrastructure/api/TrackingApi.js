@@ -1,6 +1,6 @@
 import { httpClient } from '../../../core/api/httpClient.js'
 
-const RESOURCE = '/trackingEvents'
+const RESOURCE = '/tracking-events'
 
 export const TrackingApi = {
   async findByShipmentId(shipmentId) {

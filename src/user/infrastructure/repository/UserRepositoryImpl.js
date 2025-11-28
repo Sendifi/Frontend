@@ -1,9 +1,10 @@
 import { UserRepository } from '../../domain/repository/UserRepository.js'
 import { UserApi } from '../api/UserApi.js'
 import { UserAssembler } from '../assembler/UserAssembler.js'
-import { UserAuthService } from '../../domain/service/UserAuthService.js'
+import { setAuthToken } from '../../../core/api/httpClient.js'
+import { SESSION_USER_KEY } from '../../../core/constants/storageKeys.js'
 
-const STORAGE_KEY = 'sendify_session_user'
+const STORAGE_KEY = SESSION_USER_KEY
 
 function persistUser(user) {
   if (typeof window === 'undefined') return
@@ -22,21 +23,37 @@ function restoreUser() {
 
 export class UserRepositoryImpl extends UserRepository {
   async login(command) {
-    const rawUsers = await UserApi.getAll()
-    const authenticated = UserAuthService.authenticate(command, rawUsers)
-    persistUser(authenticated)
-    return authenticated
+    const response = await UserApi.login({ email: command.email, password: command.password })
+    const user = UserAssembler.toDomain({ ...(response?.user || response), token: response?.token })
+    persistUser(user)
+    setAuthToken(user?.token)
+    return user
   }
 
   async getCurrentUser() {
     const cached = restoreUser()
-    if (!cached?.id) return null
-    const user = await UserApi.getById(cached.id).catch(() => cached)
-    return UserAssembler.toDomain(user)
+    if (!cached?.token) return null
+    setAuthToken(cached.token)
+    const data = await UserApi.getCurrent().catch(() => cached)
+    const baseUser = data?.user || data
+    if (!baseUser?.email) {
+      persistUser(null)
+      setAuthToken(null)
+      return null
+    }
+    const user = UserAssembler.toDomain({ ...baseUser, token: cached.token })
+    persistUser(user)
+    return user
   }
 
   async logout() {
+    const cached = restoreUser()
+    if (cached?.token) {
+      setAuthToken(cached.token)
+      await UserApi.logout().catch(() => {})
+    }
     persistUser(null)
+    setAuthToken(null)
     return true
   }
 }

@@ -1,7 +1,15 @@
 import { SHIPMENT_STATUS } from '../../../core/constants/domainConstants.js'
 
 export class TrackingEvent {
-  constructor({ id, shipmentId, status, description, location, timestamp, courierReference = null }) {
+  constructor({
+    id,
+    shipmentId,
+    status = SHIPMENT_STATUS.REGISTERED,
+    description,
+    location,
+    timestamp = new Date().toISOString(),
+    courierReference = null,
+  }) {
     this.id = id
     this.shipmentId = shipmentId
     this.status = status
@@ -16,7 +24,7 @@ export class TrackingEvent {
     if (!this.shipmentId || !this.status) {
       throw new Error('Tracking event requires shipmentId and status')
     }
-    if (!Object.values(SHIPMENT_STATUS).includes(this.status) && this.status !== 'REGISTERED') {
+    if (!Object.values(SHIPMENT_STATUS).includes(this.status)) {
       throw new Error('Invalid tracking status')
     }
   }

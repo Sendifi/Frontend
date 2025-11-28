@@ -20,6 +20,7 @@
               id="phone"
               v-model="form.phone"
               class="w-full"
+              required
               :placeholder="t('common.placeholders.courierPhone')"
               :aria-label="t('common.labels.phone')"
             />

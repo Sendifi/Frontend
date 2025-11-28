@@ -133,6 +133,10 @@ function getStatusSeverity(status) {
       return 'info'
     case 'PENDING':
       return 'warning'
+    case 'DELAYED':
+      return 'warning'
+    case 'CANCELLED':
+      return 'danger'
     default:
       return 'secondary'
   }

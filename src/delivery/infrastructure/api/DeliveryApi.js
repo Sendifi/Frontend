@@ -1,6 +1,6 @@
 import { httpClient } from '../../../core/api/httpClient.js'
 
-const RESOURCE = '/deliveryPersons'
+const RESOURCE = '/delivery-persons'
 
 export const DeliveryApi = {
   async getAll() {

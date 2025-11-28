@@ -55,13 +55,13 @@
           <Column :header="t('delivery.dashboard.columns.actions')">
             <template #body="{ data }">
               <Button
-                :label="t('common.actions.confirmDelivery')"
-                icon="pi pi-check"
-                class="primary-button"
-                size="small"
-                :disabled="data.status === 'DELIVERED'"
-                @click="confirmDelivery(data.id)"
-              />
+              :label="t('common.actions.confirmDelivery')"
+              icon="pi pi-check"
+              class="primary-button"
+              size="small"
+              :disabled="['DELIVERED', 'CANCELLED'].includes(data.status)"
+              @click="confirmDelivery(data.id)"
+            />
             </template>
           </Column>
         </DataTable>
@@ -113,6 +113,10 @@ function getStatusSeverity(status) {
       return 'info'
     case 'PENDING':
       return 'warning'
+    case 'DELAYED':
+      return 'warning'
+    case 'CANCELLED':
+      return 'danger'
     default:
       return 'secondary'
   }

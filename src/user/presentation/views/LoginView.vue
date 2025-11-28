@@ -10,14 +10,15 @@
       <template #content>
         <form class="login-form" @submit.prevent="onSubmit">
           <div class="field">
-            <label :for="`username`">{{ t('common.labels.username') }}</label>
+            <label :for="`email`">{{ t('common.labels.email') }}</label>
             <InputText
-              id="username"
-              v-model="form.username"
+              id="email"
+              v-model="form.email"
               class="w-full"
-              autocomplete="username"
-              :placeholder="t('common.placeholders.username')"
-              :aria-label="t('common.labels.username')"
+              type="email"
+              autocomplete="email"
+              :placeholder="t('common.placeholders.email')"
+              :aria-label="t('common.labels.email')"
               required
             />
           </div>
@@ -81,7 +82,7 @@ const userStore = useUserStore()
 const { t } = useI18n()
 
 const form = reactive({
-  username: '',
+  email: '',
   password: '',
 })
 

@@ -9,7 +9,8 @@ export class TrackingRepositoryImpl extends TrackingRepository {
   }
 
   async appendEvent(payload) {
-    const data = await TrackingApi.create(payload)
+    const dto = TrackingAssembler.toDTO(payload)
+    const data = await TrackingApi.create(dto)
     return TrackingAssembler.toDomain(data)
   }
 }

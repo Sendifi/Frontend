@@ -1,6 +1,7 @@
 import { DeliveryPersonRepository } from '../../domain/repository/DeliveryPersonRepository.js'
 import { DeliveryApi } from '../api/DeliveryApi.js'
 import { DeliveryAssembler } from '../assembler/DeliveryAssembler.js'
+import { DeliveryPerson } from '../../domain/model/DeliveryPerson.js'
 
 export class DeliveryPersonRepositoryImpl extends DeliveryPersonRepository {
   async findAll() {
@@ -20,6 +21,9 @@ export class DeliveryPersonRepositoryImpl extends DeliveryPersonRepository {
 
   async create(deliveryPerson) {
     const payload = DeliveryAssembler.toDTO(deliveryPerson)
+    if (!payload.code) {
+      payload.code = DeliveryPerson.generateCode()
+    }
     const data = await DeliveryApi.create(payload)
     return DeliveryAssembler.toDomain(data)
   }

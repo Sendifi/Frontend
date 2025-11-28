@@ -1,20 +1,21 @@
 export class DeliveryPerson {
-  constructor({ id, name, code, phone, assignedShipments = [] }) {
+  constructor({ id, name, code, phone, assignedShipments = [], isActive = true }) {
     this.id = id
     this.name = name
-    this.code = code
+    this.code = code || null
     this.phone = phone
-    this.assignedShipments = assignedShipments
+    this.isActive = isActive
+    this.assignedShipments = Array.isArray(assignedShipments) ? assignedShipments : []
     this.#assertValid()
   }
 
   #assertValid() {
-    if (!this.name || !this.code) {
-      throw new Error('Delivery person requires name and code')
+    if (!this.name || !this.phone) {
+      throw new Error('Delivery person requires name and phone')
     }
   }
 
-  generateCode() {
+  static generateCode() {
     return `DEL${(Math.random() * 1000).toFixed(0).padStart(3, '0')}`
   }
 
@@ -38,6 +39,7 @@ export class DeliveryPerson {
       name: this.name,
       code: this.code,
       phone: this.phone,
+      isActive: this.isActive,
       assignedShipments: this.assignedShipments,
     }
   }
